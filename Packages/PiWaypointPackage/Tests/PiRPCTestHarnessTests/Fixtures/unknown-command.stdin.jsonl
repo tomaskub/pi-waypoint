@@ -1,0 +1,4 @@
+{"id":"15-unknown-command-req-1","type":"definitely_not_a_real_pi_rpc_command"}
+{"id":"15-unknown-command-req-2","type":"get_state"}
+{"id":"15-unknown-command-req-3","type":"get_messages"}
+{"id":"15-unknown-command-req-4","type":"get_session_stats"}
