@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "PiWaypointPackage",
-    platforms: [.iOS(.v18)],
+    platforms: [.iOS(.v18), .macOS(.v13)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -21,7 +21,12 @@ let package = Package(
         ),
         .testTarget(
             name: "PiRPCTestHarnessTests",
-            dependencies: ["PiRPCTestHarness"]
+            dependencies: ["PiRPCTestHarness"],
+            resources: [
+                .copy("Fixtures/unknown-command.replay.ndjson"),
+                .copy("Fixtures/unknown-command.stdin.jsonl"),
+                .copy("Fixtures/unknown-command.stdout.jsonl"),
+            ]
         ),
     ],
     swiftLanguageModes: [.v6]
